@@ -1,0 +1,13 @@
+/*
+	CareTech Innovations - Custom Styles
+	Minimal overrides - keeps original Stellar template colors
+*/
+
+/* Contact email styling */
+.contact-email {
+	margin-top: 2em;
+}
+
+.contact-email a {
+	font-weight: 600;
+}
