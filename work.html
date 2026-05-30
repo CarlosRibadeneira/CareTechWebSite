@@ -6,7 +6,7 @@
     <title>Selected Work | CareTech Innovations LLC</title>
     <meta
       name="description"
-      content="Selected work from CareTech Innovations showcasing practical SQL, Python, R, and dashboard projects that support clearer business decisions."
+      content="Interactive representative case studies from CareTech Innovations, showcasing analytics, machine learning, and decision-focused implementation patterns."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="assets/css/custom.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   </head>
-  <body>
+  <body data-page="work">
     <header class="site-header">
       <div class="container nav-wrap">
         <a class="brand" href="index.html#top" aria-label="CareTech Innovations homepage">
@@ -41,125 +41,48 @@
       <section class="section work-hero">
         <div class="container">
           <header class="section-head">
-            <p class="eyebrow">Selected Work</p>
-            <h1>Practical analysis. Clearer decisions.</h1>
+            <p class="eyebrow">Representative Work Dashboard</p>
+            <h1>Decision-ready analytics, modeling, and execution.</h1>
             <p>
-              These examples show how SQL, Python, R, and dashboard work can support decisions by
-              structuring raw data, testing assumptions, and communicating findings clearly to
-              stakeholders.
+              These case studies show how structured data work can move from raw inputs to
+              measurable business direction. This dashboard presents representative projects using
+              anonymized data to protect client privacy.
             </p>
           </header>
           <div class="work-hero-tags" aria-label="Work themes">
-            <span>Data Cleaning</span>
-            <span>Exploratory Analysis</span>
-            <span>Statistical Modeling</span>
-            <span>KPI Interpretation</span>
-            <span>Dashboard Communication</span>
+            <span>Retention Modeling</span>
+            <span>SQL Operations Intelligence</span>
+            <span>Time Series Analytics</span>
+            <span>Performance Metrics</span>
+            <span>Decision Communication</span>
           </div>
         </div>
       </section>
 
       <section class="section section-alt">
         <div class="container">
-          <div class="work-grid">
-            <article class="work-card">
-              <p class="work-label">SQL Projects</p>
-              <h2>Relational data analysis and query design</h2>
-              <p>
-                This repository covers practical SQL patterns used in analysis workflows: joins,
-                aggregations, filters, and structured result sets for reporting. The value is in
-                translating business questions into clear query logic that can be reviewed and
-                repeated.
-              </p>
-              <p class="work-meta">Focus: joins, grouping, relational reasoning, reporting outputs</p>
-              <a
-                href="https://github.com/CarlosRibadeneira/SQL_Projects.git"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Explore SQL Projects
-              </a>
-            </article>
-
-            <article class="work-card">
-              <p class="work-label">Python Projects</p>
-              <h2>Exploration, preparation, and analytical workflows</h2>
-              <p>
-                This collection shows notebook-based Python analysis for cleaning datasets,
-                profiling variables, testing assumptions, and iterating from raw records to usable
-                findings. It highlights workflow discipline and reproducibility in day-to-day
-                analysis work.
-              </p>
-              <p class="work-meta">
-                Focus: notebooks, data wrangling, exploratory analysis, workflow clarity
-              </p>
-              <a
-                href="https://github.com/CarlosRibadeneira/Python_Projects.git"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Explore Python Projects
-              </a>
-            </article>
-
-            <article class="work-card">
-              <p class="work-label">R Projects</p>
-              <h2>Statistics and supervised modeling in practice</h2>
-              <p>
-                This work applies R to statistical analysis and supervised modeling with emphasis
-                on interpretation, not only output. It demonstrates how assumptions, diagnostics,
-                and model behavior affect confidence in conclusions.
-              </p>
-              <p class="work-meta">
-                Focus: statistical methods, model interpretation, analytical rigor
-              </p>
-              <a
-                href="https://github.com/CarlosRibadeneira/R_Projects.git"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Explore R Projects
-              </a>
-            </article>
-
-            <article class="work-card">
-              <p class="work-label">Power BI Work</p>
-              <h2>Dashboard communication and KPI visibility</h2>
-              <p>
-                This dashboard-focused work demonstrates practical information design: selecting
-                relevant KPIs, structuring views for fast interpretation, and surfacing patterns
-                that support operational decisions. The emphasis is clarity and usability for
-                business stakeholders.
-              </p>
-              <p class="work-meta">
-                Focus: dashboards, KPI storytelling, insight communication
-              </p>
-              <a
-                href="https://1drv.ms/w/s!AqWIgPdfPBHxm18blLQcfzrAmu6o?e=3WFfhp"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Power BI Work
-              </a>
-            </article>
+          <header class="section-head">
+            <h2>Case library</h2>
+            <p>Select a project to view one focused dashboard, how to read it, and the client-level takeaway.</p>
+          </header>
+          <div id="dashboard-filters" class="dashboard-filters" aria-label="Project filters">
+            <button type="button" class="filter-chip is-active" data-filter="All">All</button>
+            <button type="button" class="filter-chip" data-filter="Python">Python</button>
+            <button type="button" class="filter-chip" data-filter="SQL">SQL</button>
+            <button type="button" class="filter-chip" data-filter="R">R</button>
+            <button type="button" class="filter-chip" data-filter="Machine Learning">Machine Learning</button>
+            <button type="button" class="filter-chip" data-filter="Data Visualization">Data Visualization</button>
           </div>
+          <div id="projects-grid" class="dashboard-grid"></div>
         </div>
       </section>
 
       <section class="section">
         <div class="container">
           <header class="section-head">
-            <h2>Additional references</h2>
+            <h2>Additional reference</h2>
           </header>
           <div class="resource-grid">
-            <a
-              class="resource-item"
-              href="https://github.com/CarlosRibadeneira?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Full GitHub repositories
-            </a>
             <a
               class="resource-item"
               href="https://www.linkedin.com/in/carlos-ribadeneira-espinoza"
@@ -175,14 +98,14 @@
       <section class="section contact section-alt">
         <div class="container contact-wrap">
           <header class="section-head">
-            <h2>Want similar work applied to your business context?</h2>
+            <h2>Want a similar capability tailored to your business?</h2>
             <p>
-              If you are evaluating analytics, models, dashboards, or automation initiatives, we
-              can define a practical path from discovery to implementation.
+              If you are evaluating analytics, model-driven workflows, or decision dashboards, we can
+              define a practical implementation path.
             </p>
           </header>
           <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:carlos@caretechinnovations.com">Start a Conversation</a>
+            <a class="btn btn-primary" href="mailto:carlos@caretechstudio.com">Start a Conversation</a>
             <a class="btn btn-secondary" href="index.html">Back to Homepage</a>
           </div>
         </div>
@@ -201,10 +124,12 @@
           >
             LinkedIn
           </a>
-          <a href="mailto:carlos@caretechinnovations.com">Email</a>
+          <a href="mailto:carlos@caretechstudio.com">Email</a>
         </div>
         <p class="copyright">© 2026 CareTech Innovations LLC. All rights reserved.</p>
       </div>
     </footer>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
   </body>
 </html>

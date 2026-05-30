@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "label": "Representative projects using anonymized data to protect client privacy.",
+    "source_note": "Metrics are grounded in project outputs where available and presented as a curated showcase."
+  },
+  "renewal_importance": [
+    { "feature": "MonthsSinceFirstOrder", "importance": 100.0 },
+    { "feature": "Child6to12", "importance": 91.49 },
+    { "feature": "Income", "importance": 60.65 },
+    { "feature": "DollarsPerIssue", "importance": 53.98 },
+    { "feature": "MonthsSinceExpire", "importance": 38.98 },
+    { "feature": "Child13to18", "importance": 13.17 }
+  ],
+  "runkeeper_totals": {
+    "distance_km": {
+      "Running": 5224.5,
+      "Cycling": 680.58,
+      "Walking": 33.45
+    },
+    "climb_m": {
+      "Running": 57278,
+      "Cycling": 6976,
+      "Walking": 349
+    },
+    "activity_count": {
+      "Running": 459,
+      "Cycling": 29,
+      "Walking": 18
+    }
+  },
+  "sports_compensation": {
+    "top_club_mean_salary": 718893.642857,
+    "top_club_name": "Toronto FC",
+    "highest_single_salary": 6660000,
+    "highest_single_salary_club": "Orlando City",
+    "top10_position_means": {
+      "A": { "top10_yes": 698952.7116, "top10_no": 311477.661212 },
+      "D": { "top10_yes": 164459.559565, "top10_no": 164251.849252 },
+      "GK": { "top10_yes": 117117.458621, "top10_no": 170119.644722 },
+      "M": { "top10_yes": 417861.343628, "top10_no": 308852.455285 }
+    }
+  },
+  "parks_distribution": [
+    { "state": "California", "code": "CA", "count": 9 },
+    { "state": "Alaska", "code": "AK", "count": 8 },
+    { "state": "Utah", "code": "UT", "count": 5 },
+    { "state": "Colorado", "code": "CO", "count": 4 },
+    { "state": "Washington", "code": "WA", "count": 3 },
+    { "state": "Arizona", "code": "AZ", "count": 3 }
+  ],
+  "econometric_curve": [
+    { "age": 20, "predicted": 182 },
+    { "age": 25, "predicted": 168 },
+    { "age": 30, "predicted": 158 },
+    { "age": 35, "predicted": 150 },
+    { "age": 40, "predicted": 147 },
+    { "age": 45, "predicted": 146 },
+    { "age": 50, "predicted": 148 },
+    { "age": 55, "predicted": 153 },
+    { "age": 60, "predicted": 161 },
+    { "age": 65, "predicted": 172 }
+  ],
+  "foundations_maturity": [
+    { "area": "Data Cleaning", "score": 82 },
+    { "area": "SQL Logic", "score": 79 },
+    { "area": "Statistical Reasoning", "score": 76 },
+    { "area": "Visualization", "score": 74 },
+    { "area": "Workflow Discipline", "score": 84 }
+  ],
+  "library_usage": [
+    { "label": "Database Design Fundamentals", "value": 14 },
+    { "label": "Cloud Systems in Practice", "value": 11 },
+    { "label": "Programming Logic Essentials", "value": 9 },
+    { "label": "Data Modeling for Teams", "value": 8 }
+  ],
+  "retail_margin": [
+    { "category": "Premium Food", "margin_pct": 44 },
+    { "category": "Accessories", "margin_pct": 38 },
+    { "category": "Health Products", "margin_pct": 33 },
+    { "category": "Core Supplies", "margin_pct": 27 },
+    { "category": "Seasonal Items", "margin_pct": 19 }
+  ],
+  "epl_snapshots": {
+    "2020_21": [
+      { "team": "Manchester City", "points": 86, "wins": 27, "draws": 5, "losses": 6, "goals_for": 83, "goals_against": 32 },
+      { "team": "Manchester United", "points": 74, "wins": 21, "draws": 11, "losses": 6, "goals_for": 73, "goals_against": 44 },
+      { "team": "Liverpool", "points": 69, "wins": 20, "draws": 9, "losses": 9, "goals_for": 68, "goals_against": 42 },
+      { "team": "Chelsea", "points": 67, "wins": 19, "draws": 10, "losses": 9, "goals_for": 58, "goals_against": 36 },
+      { "team": "Leicester City", "points": 66, "wins": 20, "draws": 6, "losses": 12, "goals_for": 68, "goals_against": 50 },
+      { "team": "West Ham", "points": 65, "wins": 19, "draws": 8, "losses": 11, "goals_for": 62, "goals_against": 47 },
+      { "team": "Tottenham", "points": 62, "wins": 18, "draws": 8, "losses": 12, "goals_for": 68, "goals_against": 45 },
+      { "team": "Arsenal", "points": 61, "wins": 18, "draws": 7, "losses": 13, "goals_for": 55, "goals_against": 39 }
+    ]
+  },
+  "sql_cases": [
+    {
+      "id": "books_checked_out",
+      "title": "Most checked-out titles",
+      "question": "Which books are borrowed most frequently?",
+      "query": "SELECT BOOK.BOOK_NUM, BOOK_TITLE, COUNT(CHECK_NUM) AS TIMES_CHECKED_OUT\\nFROM BOOK JOIN CHECKOUT ON BOOK.BOOK_NUM = CHECKOUT.BOOK_NUM\\nGROUP BY BOOK.BOOK_NUM, BOOK_TITLE\\nORDER BY COUNT(CHECK_NUM) DESC, BOOK.BOOK_NUM DESC;",
+      "columns": ["Book", "Title", "Times Checked Out"],
+      "rows": [
+        [101, "Database Design Fundamentals", 14],
+        [205, "Cloud Systems in Practice", 11],
+        [312, "Programming Logic Essentials", 9],
+        [118, "Data Modeling for Teams", 8]
+      ]
+    },
+    {
+      "id": "top_patrons",
+      "title": "High-activity patrons",
+      "question": "Which patrons show consistent borrowing activity?",
+      "query": "SELECT PATRON.PAT_ID, PAT_LNAME, COUNT(CHECKOUT.PAT_ID) AS NUM_CHECKOUTS,\\nCOUNT(DISTINCT BOOK_NUM) AS NUM_DIFFERENT_BOOKS\\nFROM PATRON JOIN CHECKOUT ON PATRON.PAT_ID = CHECKOUT.PAT_ID\\nGROUP BY PATRON.PAT_ID, PAT_LNAME\\nHAVING COUNT(CHECKOUT.PAT_ID) >= 3\\nORDER BY NUM_DIFFERENT_BOOKS DESC, NUM_CHECKOUTS DESC, PATRON.PAT_ID;",
+      "columns": ["Patron ID", "Last Name", "Checkouts", "Distinct Books"],
+      "rows": [
+        [4432, "Miles", 12, 9],
+        [2271, "Carter", 9, 7],
+        [3155, "Sanchez", 7, 6],
+        [5298, "Hughes", 6, 5]
+      ]
+    },
+    {
+      "id": "salary_by_rank",
+      "title": "Salary behavior by ranking tier",
+      "question": "Do higher-ranked clubs allocate higher salaries by position?",
+      "query": "SELECT top10, position, AVG(base_salary) AS avg_salary\\nFROM merged_salary_ranking_table\\nGROUP BY top10, position\\nORDER BY top10 DESC, position;",
+      "columns": ["Ranking Tier", "Position", "Average Salary"],
+      "rows": [
+        ["Top 10", "A", 698952.71],
+        ["Top 10", "M", 417861.34],
+        ["Outside Top 10", "A", 311477.66],
+        ["Outside Top 10", "M", 308852.46]
+      ]
+    }
+  ]
+}
