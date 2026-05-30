@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Case Details | CareTech Innovations LLC</title>
+    <meta
+      name="description"
+      content="Focused case details with one interactive dashboard, interpretation, and concise business conclusions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  </head>
+  <body data-page="case">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html#top" aria-label="CareTech Innovations homepage">
+          <img src="images/caretech-logo.svg" alt="CareTech Innovations logo" />
+          <span>CareTech Innovations</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#care">CARE Method</a>
+          <a href="index.html#process">Process</a>
+          <a href="work.html">Work</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <a class="btn btn-primary nav-cta" href="index.html#contact">Contact Us</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="section work-hero">
+        <div class="container">
+          <header class="section-head">
+            <p id="case-track" class="eyebrow">Case</p>
+            <h1 id="case-title">Case title</h1>
+            <p id="case-summary"></p>
+          </header>
+          <div class="work-hero-tags">
+            <span>Representative Project</span>
+            <span>Anonymized Data to Protect Privacy</span>
+            <span>Client-Facing Interpretation</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container">
+          <article class="chart-panel case-panel">
+            <p class="work-meta case-context"><strong>Context:</strong> <span id="case-context"></span></p>
+            <p class="case-technique"><strong>Technique used:</strong> <span id="case-technique"></span></p>
+
+            <div class="demo-controls is-hidden" id="case-controls">
+              <button type="button" class="filter-chip metric-chip is-active" data-metric="distance_km">Distance</button>
+              <button type="button" class="filter-chip metric-chip" data-metric="climb_m">Climb</button>
+              <button type="button" class="filter-chip metric-chip" data-metric="activity_count">Volume</button>
+            </div>
+
+            <div id="case-chart" class="chart-canvas" aria-label="Case chart"></div>
+
+            <div id="sql-viewer" class="sql-viewer is-hidden">
+              <div class="demo-controls">
+                <label for="sql-case-select">SQL scenario</label>
+                <select id="sql-case-select"></select>
+              </div>
+              <p id="sql-case-question" class="work-meta"></p>
+              <pre id="sql-case-query" class="sql-query-block"></pre>
+              <div class="table-wrap">
+                <table class="result-table">
+                  <thead>
+                    <tr id="sql-case-head"></tr>
+                  </thead>
+                  <tbody id="sql-case-body"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="case-guidance-grid">
+              <article class="guidance-card">
+                <h3>How to read it</h3>
+                <p id="case-how-read"></p>
+              </article>
+              <article class="guidance-card">
+                <h3>How to interact</h3>
+                <p id="case-interact"></p>
+              </article>
+            </div>
+
+            <article class="case-conclusion">
+              <h3>What this data told us</h3>
+              <p id="case-conclusion"></p>
+            </article>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="case-nav">
+            <a class="btn btn-secondary" href="work.html">Back to all work</a>
+            <a id="next-case-link" class="btn btn-primary" href="work.html">Next case study</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p class="footer-brand">CareTech Innovations LLC</p>
+        <p>Data Science • AI Agents • Software Development</p>
+        <div class="footer-links" aria-label="Social and contact links">
+          <a
+            href="https://www.linkedin.com/in/carlos-ribadeneira-espinoza"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a href="mailto:carlos@caretechstudio.com">Email</a>
+        </div>
+        <p class="copyright">© 2026 CareTech Innovations LLC. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>
+</html>
