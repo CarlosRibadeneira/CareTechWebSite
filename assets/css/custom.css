@@ -320,8 +320,7 @@ button:focus-visible {
 
 .service-card,
 .care-card,
-.founder-card,
-.process-grid li {
+.founder-card {
   background: linear-gradient(180deg, rgba(17, 24, 39, 0.95), rgba(15, 23, 42, 0.95));
   border: 1px solid var(--border-soft);
   border-radius: 18px;
@@ -335,7 +334,6 @@ button:focus-visible {
 
 .service-card:hover,
 .care-card:hover,
-.process-grid li:hover,
 .founder-card:hover {
   transform: translateY(-6px);
   border-color: var(--border-orange);
@@ -344,7 +342,6 @@ button:focus-visible {
 
 .service-card h3,
 .care-card h3,
-.process-grid h3,
 .founder-card h3 {
   margin-bottom: 0.55rem;
   font-size: 1.22rem;
@@ -359,35 +356,6 @@ button:focus-visible {
 .care-card h3 span {
   color: var(--orange-main);
   font-size: 1.3em;
-}
-
-.process-grid {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.85rem;
-}
-
-.process-grid li {
-  position: relative;
-}
-
-.process-grid li::before {
-  content: "";
-  position: absolute;
-  top: 0.8rem;
-  left: 0.8rem;
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  background: var(--blue-main);
-  box-shadow: 0 0 16px var(--blue-glow);
-}
-
-.process-grid li h3 {
-  margin-left: 1.1rem;
 }
 
 .capability-tags {
@@ -639,6 +607,27 @@ button:focus-visible {
   font-weight: 700;
 }
 
+#sql-viewer .result-table {
+  min-width: 100%;
+  table-layout: auto;
+}
+
+#sql-viewer .result-table th,
+#sql-viewer .result-table td {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+#sql-viewer .result-table th:nth-child(2),
+#sql-viewer .result-table td:nth-child(2) {
+  width: 45%;
+}
+
+#sql-viewer .result-table th:nth-child(n + 3),
+#sql-viewer .result-table td:nth-child(n + 3) {
+  text-align: right;
+}
+
 #case-chart .result-table {
   min-width: 0;
 }
@@ -816,10 +805,6 @@ button:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .process-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .work-preview-grid,
   .dashboard-grid,
   .work-grid,
@@ -872,13 +857,8 @@ button:focus-visible {
   .work-preview-grid,
   .work-grid,
   .resource-grid,
-  .about-grid,
-  .process-grid {
+  .about-grid {
     grid-template-columns: 1fr;
-  }
-
-  .process-grid li::before {
-    top: 1rem;
   }
 
   .hero-copy h1 {

@@ -131,6 +131,31 @@
         ["Outside Top 10", "A", 311477.66],
         ["Outside Top 10", "M", 308852.46]
       ]
+    },
+    {
+      "id": "retail_margin_categories",
+      "title": "Margin by product category",
+      "question": "Which product categories are strongest on average margin?",
+      "query": "SELECT category, AVG(margin_pct) AS avg_margin_pct\\nFROM retail_inventory_sales\\nGROUP BY category\\nORDER BY avg_margin_pct DESC;",
+      "columns": ["Category", "Average Margin (%)"],
+      "rows": [
+        ["Premium Food", 44],
+        ["Accessories", 38],
+        ["Health Products", 33],
+        ["Core Supplies", 27],
+        ["Seasonal Items", 19]
+      ]
+    },
+    {
+      "id": "retail_stock_risk",
+      "title": "Low-margin stock risk",
+      "question": "Which categories combine lower margins with inventory exposure?",
+      "query": "SELECT category, avg_margin_pct, stock_risk_level\\nFROM retail_margin_risk_view\\nWHERE avg_margin_pct < 30\\nORDER BY avg_margin_pct ASC;",
+      "columns": ["Category", "Average Margin (%)", "Stock Risk"],
+      "rows": [
+        ["Seasonal Items", 19, "High"],
+        ["Core Supplies", 27, "Medium"]
+      ]
     }
   ]
 }
