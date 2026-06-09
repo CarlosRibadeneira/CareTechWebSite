@@ -10,8 +10,8 @@
     "outcome": "The model separates likely renewers from non-renewers with high reliability.",
     "method": "Feature engineering, model comparison, cross-validation, and variable-importance analysis.",
     "contextLine": "Business question: who should receive renewal offers first so campaign spend is not wasted?",
-    "howToRead": "Each bar shows how strongly that factor influences renewal likelihood. Taller bars matter more.",
-    "interact": "Hover over each bar to compare impact. Start from the highest bars to prioritize campaign segments.",
+    "howToRead": "Each horizontal bar shows how strongly that factor influences renewal likelihood. Longer bars matter more.",
+    "interact": "Hover over each bar to compare impact. Start from the longest bars to prioritize campaign segments.",
     "conclusion": "This told us exactly which customers are most likely to renew, mainly long-time subscribers and families with school-age kids. It helped the team focus offers where conversion is most probable, cut low-value outreach, and trust targeting decisions because model separation performance is strong.",
     "detail": "Representative project using anonymized (privacy-protected) customer and subscription attributes to optimize retention strategy."
   },
@@ -27,7 +27,7 @@
     "method": "Date filtering, home-away split processing, grouped aggregations, and ranking logic.",
     "contextLine": "Business question: how do we turn messy event logs into a ranking that people can act on quickly?",
     "howToRead": "Rows are ordered by points. Wins, draws, and losses explain how each team reached that rank.",
-    "interact": "Change season snapshots and scan the top rows first to identify leaders and immediate challengers.",
+    "interact": "Scan the top rows first to identify leaders, then read down the table to spot immediate challengers.",
     "conclusion": "This told us who is truly performing once all matches are standardized into the same scoring logic. It helped convert raw results into a clear leaderboard, exactly like turning operational logs into an executive KPI ranking.",
     "detail": "Representative project with anonymized (privacy-protected) presentation mirroring production reporting needs."
   },
@@ -42,7 +42,7 @@
     "outcome": "Summarized 5,224.5 km of running and 57,278 m of climbing with cross-activity benchmarks.",
     "method": "Data preparation, grouped summaries, missing value handling, and comparative metrics.",
     "contextLine": "Business question: where does most of the effort happen so training time and planning stay aligned with reality?",
-    "howToRead": "Compare bar heights by activity to see where distance, climbing load, and activity volume concentrate.",
+    "howToRead": "Compare slice sizes by activity to see where distance, climbing load, and activity volume concentrate.",
     "interact": "Switch between Distance, Climb, and Volume to view workload from three operational angles.",
     "conclusion": "This told us running drives most distance and elevation workload while other activities are complementary. It helped prioritize planning around the highest-impact activity instead of distributing effort evenly across lower-impact areas.",
     "detail": "Representative project presented with anonymized (privacy-protected) framing for operational fitness analytics."
@@ -74,8 +74,8 @@
     "outcome": "Highlighted distribution differences across geographies and trend direction by category.",
     "method": "Comparative plotting, segmentation, and hypothesis-oriented visual analysis.",
     "contextLine": "Business question: is demand spread evenly, or concentrated in a few regions that need priority attention?",
-    "howToRead": "Each bar is a state. Higher bars mean more locations in that state and concentrated demand potential.",
-    "interact": "Hover bars and compare the top states first, then review the drop-off to lower-volume states.",
+    "howToRead": "Each state is shaded by how many locations it has. Warmer, darker states have more locations and concentrated demand potential.",
+    "interact": "Hover over each state and compare the most concentrated states first, then review the lighter, lower-volume states.",
     "conclusion": "This told us demand is concentrated in a small number of states rather than distributed evenly. It helped guide where to prioritize staffing, marketing, and operational focus instead of applying the same strategy everywhere.",
     "detail": "Representative project where charts focus on decision communication over raw output volume with anonymized (privacy-protected) context."
   },
@@ -90,7 +90,7 @@
     "outcome": "Delivered repeatable logic for borrower activity, popular titles, and inventory behavior.",
     "method": "Joins, aggregation, HAVING filters, and nested subqueries across relational entities.",
     "contextLine": "Business question: which catalog assets are actually used most so inventory and promotions stay relevant?",
-    "howToRead": "Bars rank titles by checkout count. Taller bars indicate stronger demand and higher circulation value.",
+    "howToRead": "Horizontal bars rank titles by checkout count. Longer bars indicate stronger demand and higher circulation value.",
     "interact": "Use the SQL scenario selector to switch question/query/result, then compare chart and table together.",
     "conclusion": "This told us exactly which titles attract the most borrowing activity. It helped focus stocking and promotion decisions on high-demand items while identifying where shelf space may be underperforming.",
     "detail": "Representative project framed with anonymized (privacy-protected) data patterns."
@@ -106,8 +106,8 @@
     "outcome": "Surfaced high-impact insights on profitability, stock risk, and sales concentration.",
     "method": "Multi-table joins, TOP filters, period constraints, and union-based supplier views.",
     "contextLine": "Business question: which product categories deliver strong margins and which ones tie up inventory with low return?",
-    "howToRead": "Bars compare average margin by category. Higher bars indicate healthier revenue-to-cost performance.",
-    "interact": "Hover each category, compare margin spread, and cross-check with SQL output for root-cause detail.",
+    "howToRead": "Bars compare average margin by category, while the overlaid line tracks the cumulative share. Taller bars indicate healthier revenue-to-cost performance.",
+    "interact": "Hover each category to compare margin spread, follow the cumulative line to see how quickly margin concentrates, and cross-check with SQL output for root-cause detail.",
     "conclusion": "This told us not all categories contribute equally to profitability. It helped prioritize high-margin segments and flag low-return inventory where pricing or assortment changes are needed.",
     "detail": "Representative project with anonymized (privacy-protected) data for decision-support reporting."
   },
@@ -138,7 +138,7 @@
     "outcome": "Built strong capability in data wrangling, relational logic, and analytical communication.",
     "method": "Progressive implementation from core syntax to structured analytical workflows.",
     "contextLine": "Business question: do we have reliable fundamentals before scaling to advanced modeling and automation?",
-    "howToRead": "Bars summarize capability depth by area. Higher values represent stronger implementation readiness.",
+    "howToRead": "Each spoke on the radar summarizes capability depth by area. Points farther from the center represent stronger implementation readiness.",
     "interact": "Hover each capability area to compare maturity and see where further improvement would add resilience.",
     "conclusion": "This told us the core workflow foundations are in place across Python, SQL, and R. It helped ensure advanced projects are built on stable, repeatable practices rather than one-off scripts.",
     "detail": "Representative foundational work that supports the advanced case studies shown above."
