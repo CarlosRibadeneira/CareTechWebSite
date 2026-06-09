@@ -322,7 +322,7 @@
         },
         { displayModeBar: false, responsive: true }
       );
-      renderSqlViewer("books_checked_out");
+      renderSqlViewer("books_checked_out", ["books_checked_out", "top_patrons"]);
       return;
     }
 
@@ -355,7 +355,7 @@
         },
         { displayModeBar: false, responsive: true }
       );
-      renderSqlViewer("salary_by_rank");
+      renderSqlViewer("retail_margin_categories", ["retail_margin_categories", "retail_stock_risk"]);
       return;
     }
 
@@ -431,7 +431,7 @@
     );
   }
 
-  function renderSqlViewer(defaultId) {
+  function renderSqlViewer(defaultId, allowedIds = null) {
     showSqlViewer();
     const select = document.getElementById("sql-case-select");
     const q = document.getElementById("sql-case-question");
@@ -439,25 +439,33 @@
     const head = document.getElementById("sql-case-head");
     const body = document.getElementById("sql-case-body");
     if (!select || !q || !query || !head || !body) return;
+    const sqlCases = Array.isArray(allowedIds) && allowedIds.length
+      ? charts.sql_cases.filter((item) => allowedIds.includes(item.id))
+      : charts.sql_cases;
+    if (!sqlCases.length) return;
 
     select.innerHTML = "";
-    charts.sql_cases.forEach((item) => {
+    sqlCases.forEach((item) => {
       const option = document.createElement("option");
       option.value = item.id;
       option.textContent = item.title;
       if (item.id === defaultId) option.selected = true;
       select.appendChild(option);
     });
+    if (!select.value && sqlCases[0]) {
+      select.value = sqlCases[0].id;
+    }
 
     const paintCase = (caseId) => {
-      const selected = charts.sql_cases.find((item) => item.id === caseId) || charts.sql_cases[0];
+      const selected = sqlCases.find((item) => item.id === caseId) || sqlCases[0];
       q.textContent = selected.question;
-      query.textContent = selected.query;
+      query.textContent = selected.query.replace(/\\n/g, "\n");
 
       head.innerHTML = "";
       selected.columns.forEach((col) => {
         const th = document.createElement("th");
         th.textContent = col;
+        th.title = col;
         head.appendChild(th);
       });
 
@@ -467,6 +475,7 @@
         row.forEach((cell) => {
           const td = document.createElement("td");
           td.textContent = cell;
+          td.title = String(cell);
           tr.appendChild(td);
         });
         body.appendChild(tr);
@@ -493,6 +502,19 @@
   function renderCasePage() {
     const params = new URLSearchParams(window.location.search);
     currentProject = getProjectById(params.get("id"));
+    document.title = `${currentProject.title} | CareTech Innovations LLC`;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription && currentProject.summary) {
+      metaDescription.setAttribute("content", currentProject.summary);
+    }
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", `${currentProject.title} | CareTech Innovations LLC`);
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription && currentProject.summary) ogDescription.setAttribute("content", currentProject.summary);
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute("content", `${currentProject.title} | CareTech Innovations LLC`);
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription && currentProject.summary) twitterDescription.setAttribute("content", currentProject.summary);
     renderCaseMeta(currentProject);
     renderNextCaseNav(currentProject);
     chartByProject(currentProject);
